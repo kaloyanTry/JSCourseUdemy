@@ -1,8 +1,3 @@
-//'use strict';
-
-// const calcAverage1 = () => (44 + 23 + 71) / 3;
-// const calcAverage2 = () => (85 + 54 + 41) / 3;
-
 const calcAgerage = (a, b, c) => (a + b + c) / 3;
 
 let scoreDolphins = calcAgerage(44, 23, 71);
