@@ -1,5 +1,17 @@
 'use strict';
 
+const secretNumber = Math.trunc(Math.floor() * 20) + 1;
+let score = 20;
+let highScore = 20;
+
+
+
+
+
+
+
+
+/////////////////////////
 //DOM = Document Object Model
 //DOM and DOM methods = is part of Web APIs = libraries /written in JS that browsers implement/
 
@@ -11,14 +23,3 @@ document.querySelector('.score').textContent = 10;
 
 console.log(document.querySelector('.quess').value);
 document.querySelector('.quess').value = 23; */
-
-document.querySelector('.check').addEventListener('click', function () {
-  const quess = Number(document.querySelector('.guess').value);
-
-  console.log(quess);
-
-  if (!quess) {
-    document.querySelector('.message').textContent = 'No number!';
-  } else {
-  }
-});
