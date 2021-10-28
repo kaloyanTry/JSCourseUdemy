@@ -16,6 +16,7 @@ document.querySelector('.check').addEventListener('click', function() {
     } else if (guess === secretNumber) {
         displayMessage(`Correct! You guess the number: ${guess}`);
         document.querySelector('.number').textContent = secretNumber;
+        
         if (highScore < score) {
             highScore = score;
             document.querySelector('.highscore').textContent = highScore;
