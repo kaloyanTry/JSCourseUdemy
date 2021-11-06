@@ -44,3 +44,8 @@ console.log(first, third);
 // const [x, y, z] = arr;
 // console.log(arr);
 // console.log(x, y, z);
+
+//nested distruturing:
+const nested = [2, 3, [4, 5]];
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
