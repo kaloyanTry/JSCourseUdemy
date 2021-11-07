@@ -26,16 +26,21 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPizza: function (mainIgredients, ...otherIngredients) {
+    console.log(mainIgredients);
+    console.log(otherIngredients);
+  },
 };
 
-let [first, , third] = restaurant.categories;
-console.log(first, third);
+// destructing arrays:
+// let [first, , third] = restaurant.categories;
+// console.log(first, third);
 
-//reasign the values/switching the variables
-[first, third] = [third, first];
-console.log(first, third);
+// reasign the values/switching the variables
+// [first, third] = [third, first];
+// console.log(first, third);
 
-//distructuring array:
+//destructuring array:
 // const arr = [2, 3, 4];
 // const a = arr[0];
 // const b = arr[1];
@@ -45,7 +50,75 @@ console.log(first, third);
 // console.log(arr);
 // console.log(x, y, z);
 
-//nested distruturing:
-const nested = [2, 3, [4, 5]];
-const [i, , [j, k]] = nested;
-console.log(i, j, k);
+// nested destruturing:
+// const nested = [2, 3, [4, 5]];
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// destructuring objects:
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+// destructing default values:
+// const { menu = [], startMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// mutaitng variables:
+// let a = 101;
+// let b = 340;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// *** SPREAD operator: Really very usefull***
+// const arr = [7, 8, 9];
+// const newArr = [1, 2, 3, ...arr];
+// console.log(newArr);
+// // add new menu item with the spread operator: ...
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// copy array - ... spread:
+// const mainMenuCopy = [...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// spread function arguments - modern js:
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 4);
+// add(8, 6, 9, 1, 3, 4, 2);
+
+// const x = [23, 4, 6];
+// add(...x);
+
+// ........
+
+// REST operator with arrays:
+// const arr = [1, 2, ...[4, 5]];
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+// // REST with object elements:
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+// // REST functions-multuple arguments:
+// restaurant.orderPizza('tommato', 'mashrooms', 'olive', 'onion');
+// restaurant.orderPizza('tommato');
+
+// logical operator OR || short-curcuiting = return first true:
+// const guestsNumber = restaurant.numbers || 10;
+
+// For..of LOOP:
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+// for...of with i:index items
+for (const itemI of menu.entries()) {
+  console.log(itemI);
+}
+// the same but with destructuring indexes
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
