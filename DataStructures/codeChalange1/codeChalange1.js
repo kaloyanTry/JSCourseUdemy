@@ -1,4 +1,5 @@
 'use strict';
+
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
 
@@ -58,7 +59,7 @@ const game = {
   },
 };
 
-//Solution:
+// SOLUTION:
 // 1.Creating 2 separate arrays = 2 teams:
 const [players1, players2] = game.players;
 console.log(players1);
