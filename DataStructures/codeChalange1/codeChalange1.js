@@ -64,21 +64,26 @@ const game = {
 const [players1, players2] = game.players;
 console.log(players1);
 console.log(players2);
+
 // 2.Rest goalkeeper and the fieldPlayers:
 const [gk, ...fieldPlayers] = players1;
 console.log(gk);
 console.log(fieldPlayers);
+
 // 3. Combine all players in one array
 const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
+
 // 4. Add the 3 players-subtitutes to the team players1
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
+
 // 5. Create a variable for each one odd
 const {
   odds: { team1, x: draw, team2 },
 } = game;
 console.log(team1, draw, team2);
+
 // 6: Print the scored names and the number of goals were scored:
 const printGoals = function (...players) {
   console.log(players);
