@@ -122,3 +122,10 @@ for (const itemI of menu.entries()) {
 for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
+
+// (?.) Optional Chaining Operator (?.):
+console.log(restaurant?.openingHours.mon?.open); //return undefined because mon is NOT openingHours
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// display name only if user [0] exist else print the message:
+const users = [{ name: 'Klao', email: 'kloao@mail.com' }];
+console.log(users[0]?.name ?? 'User array empty');
