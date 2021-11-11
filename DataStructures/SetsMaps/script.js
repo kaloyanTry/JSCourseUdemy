@@ -4,33 +4,52 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+const getCode = str => str.slice(0, 3).toUpperCase();
+for (const fligh of flights.split('+')) {
+  const [type, from, to, time] = fligh.split(';');
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  orderPizza: function (mainIgredients, ...otherIngredients) {
-    console.log(mainIgredients);
-    console.log(otherIngredients);
-  },
-};
+  // type = type.startsWith('_Delayed') ? '🔴' : ''.type.replaceAll('_', ' ');
+  // from = getCode(from);
+  // to = getCode(to);
+  // time = time.replace(':', 'h');
+
+  // const output = `${type} ${from} ${to} ${time}`.padStart(36);
+
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
+
+  console.log(output);
+}
+
+// // Data needed for first part of the section
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   orderPizza: function (mainIgredients, ...otherIngredients) {
+//     console.log(mainIgredients);
+//     console.log(otherIngredients);
+//   },
+// };
 
 // SETS - Creating sets:
 // const orderedSet = new Set(['Pasta', 'Pizza', 'Risoto', 'Pizza', 'Pasta']);
@@ -124,98 +143,112 @@ const restaurant = {
 
 //  STRINGS:
 
-const airlineString = 'TAP Air Portugal';
-const plane = 'A320';
+// const airlineString = 'TAP Air Portugal';
+// const plane = 'A320';
 
-// Manipulating strings:
-console.log(airlineString.length);
-console.log('B737'.length); //display directly the length
+// // Manipulating strings:
+// console.log(airlineString.length);
+// console.log('B737'.length); //display directly the length
 
-console.log(airlineString.indexOf('r'));
-console.log(airlineString.lastIndexOf('r'));
+// console.log(airlineString.indexOf('r'));
+// console.log(airlineString.lastIndexOf('r'));
 
-console.log(airlineString.slice(4)); // extract string beginning from the pos/num 4
-console.log(airlineString.slice(4, 7)); // extract string finishing to the pos/num 7
-console.log(airlineString.slice(0, airlineString.lastIndexOf(' ') + 1));
+// console.log(airlineString.slice(4)); // extract string beginning from the pos/num 4
+// console.log(airlineString.slice(4, 7)); // extract string finishing to the pos/num 7
+// console.log(airlineString.slice(0, airlineString.lastIndexOf(' ') + 1));
 
-// extrect back to forward string
-console.log(airlineString.slice(-3));
+// // extrect back to forward string
+// console.log(airlineString.slice(-3));
 
-// function check if the seat is in the middle:
-const checkMiddleSeat = function (seat) {
-  const currentSeat = seat.slice(-1);
-  if (currentSeat === 'B' || currentSeat === 'E')
-    console.log('You are not that lucky in the middle :(');
-  else console.log('You are lucky :)');
-};
+// // function check if the seat is in the middle:
+// const checkMiddleSeat = function (seat) {
+//   const currentSeat = seat.slice(-1);
+//   if (currentSeat === 'B' || currentSeat === 'E')
+//     console.log('You are not that lucky in the middle :(');
+//   else console.log('You are lucky :)');
+// };
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('11E');
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('11E');
 
-const passenger = 'JoNaS';
-// const passengerLower = passenger.toLowerCase();
-// const passengerCorrect =
-//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
-// console.log(passengerCorrect);
+// const passenger = 'JoNaS';
+// // const passengerLower = passenger.toLowerCase();
+// // const passengerCorrect =
+// //   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// // console.log(passengerCorrect);
 
-const passengerFunc = function (pasangerName) {
-  const nameLower = pasangerName.toLowerCase();
-  const correctName = nameLower[0].toUpperCase() + nameLower.slice(1);
+// const passengerFunc = function (pasangerName) {
+//   const nameLower = pasangerName.toLowerCase();
+//   const correctName = nameLower[0].toUpperCase() + nameLower.slice(1);
 
-  return correctName;
-};
-console.log(passengerFunc('KALoyAn'));
+//   return correctName;
+// };
+// console.log(passengerFunc('KALoyAn'));
 
-// checking email address - toLowerCase().trim():
-const email = 'princat@mmm.io';
-const loginInputEmail = '   PrincaT@MMM.IO  \n   ';
-const normalizedEmail = loginInputEmail.toLowerCase().trim();
-console.log(email === normalizedEmail);
+// // checking email address - toLowerCase().trim():
+// const email = 'princat@mmm.io';
+// const loginInputEmail = '   PrincaT@MMM.IO  \n   ';
+// const normalizedEmail = loginInputEmail.toLowerCase().trim();
+// console.log(email === normalizedEmail);
 
-// replacing signs:
-const priceGB = '288,97£';
-const priceUS = priceGB.replace('£', '$').replace(',', '.');
-console.log(priceUS);
+// // replacing signs:
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
 
-// replace all words that match
-const annoncement =
-  'All passengers come to boarding door 23. Boarding door 23!';
-console.log(annoncement.replaceAll('door', 'gate'));
-console.log(annoncement.replace(/door/g, 'gate')); // the same method, but global/g
+// // replace all words that match
+// const annoncement =
+//   'All passengers come to boarding door 23. Boarding door 23!';
+// console.log(annoncement.replaceAll('door', 'gate'));
+// console.log(annoncement.replace(/door/g, 'gate')); // the same method, but global/g
 
-const planeIncludes = 'A32new';
-console.log(planeIncludes.includes('Boeing')); // boolien
-console.log(planeIncludes.startsWith('A'));
+// const planeIncludes = 'A32new';
+// console.log(planeIncludes.includes('Boeing')); // boolien
+// console.log(planeIncludes.startsWith('A'));
 
-// very powerfull split() and join() methods
-console.log('a+good+man+show'.split('+'));
-console.log('Kaloyan Ganchev'.split(' '));
+// // very powerfull split() and join() methods
+// console.log('a+good+man+show'.split('+'));
+// console.log('Kaloyan Ganchev'.split(' '));
 
-const [firstName, secondName] = 'Kaloyan Ganchev'.split(' ');
-const newName = ['Mr.', firstName, secondName.toUpperCase()].join(' ');
-console.log(newName);
+// const [firstName, secondName] = 'Kaloyan Ganchev'.split(' ');
+// const newName = ['Mr.', firstName, secondName.toUpperCase()].join(' ');
+// console.log(newName);
 
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
-  for (const n of names) {
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (const n of names) {
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
 
-  console.log(namesUpper.join(' '));
-};
+//   console.log(namesUpper.join(' '));
+// };
 
-capitalizeName('jesica ann smith davis');
-capitalizeName('jonas schmedtman');
+// capitalizeName('jesica ann smith davis');
+// capitalizeName('jonas schmedtman');
 
-const maskCreditCardNumber = function (number) {
-  const numberString = number + '';
-  const lastNums = numberString.slice(-4);
+// const maskCreditCardNumber = function (number) {
+//   const numberString = number + '';
+//   const lastNums = numberString.slice(-4);
 
-  return lastNums.padStart(numberString.length, '*');
-};
+//   return lastNums.padStart(numberString.length, '*');
+// };
 
-console.log(maskCreditCardNumber(8714689799));
-console.log(maskCreditCardNumber(2121310212131121));
-console.log(maskCreditCardNumber('0564656565971323299578'));
+// console.log(maskCreditCardNumber(8714689799));
+// console.log(maskCreditCardNumber(2121310212131121));
+// console.log(maskCreditCardNumber('0564656565971323299578'));
+
+// // codeChalange4 simple solution:
+// const convertCamelCase = function (unStr) {
+//   const [firstWord, secondWord] = unStr.split('_');
+
+//   const secondUp = secondWord.replace(
+//     secondWord[0],
+//     secondWord[0].toUpperCase()
+//   );
+//   const result = [firstWord, secondUp].join('');
+//   return result;
+// };
+
+// console.log(convertCamelCase('underscore_case'));
