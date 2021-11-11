@@ -30,9 +30,11 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
+
 // creating the input textarea and button:
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
+
 
 // JS code for taking the input and convert it, output on console:
 document.querySelector('button').addEventListener('click', function () {
@@ -41,10 +43,7 @@ document.querySelector('button').addEventListener('click', function () {
 
   for (const [i, row] of textRows.entries()) {
     const [firstWord, secondWord] = row.toLowerCase().trim().split('_');
-    const secondUp = secondWord.replace(
-      secondWord[0],
-      secondWord[0].toUpperCase()
-    );
+    const secondUp = secondWord.replace(secondWord[0],secondWord[0].toUpperCase());   
     const output = `${firstWord}${secondUp}`;
 
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
