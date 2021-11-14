@@ -119,77 +119,107 @@
 //   console.log(`${greetingArrow}, ${nameArrow}!`);
 // greetArrow('HelloArrow')('JohnasArrow');
 
-const lufthansa = {
-  airline: 'Lufthansa',
-  iataCode: 'LH',
-  bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-  },
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookings: [],
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+//   },
+// };
+// lufthansa.book(234, 'Jonas Schmidt');
+// lufthansa.book(699, 'Jock Sparow');
+// console.log(lufthansa);
+
+// const eurowings = {
+//   name: 'Eurowings',
+//   iataCode: 'EW',
+//   bookings: [],
+// };
+
+// const book = lufthansa.book;
+
+// // menualy set this book method:
+// book.call(eurowings, 233, 'Sarah Williams');
+// book.call(lufthansa, 363, 'Bilie Jean');
+
+// const swiss = {
+//   airline: 'Swiss Air Lines',
+//   iataCode: 'LX',
+//   bookings: [],
+// };
+
+// book.call(swiss, 358, 'Mary Cooper');
+// const flightData = [583, 'George Cooper']; // .call the same swiss but with const:
+// book.call(swiss, ...flightData);
+// console.log(swiss);
+
+// // .bind is the same as .call but it creates a new function
+// const bookEW = book.bind(eurowings);
+// const bookLH = book.bind(lufthansa);
+// const bookLX = book.bind(swiss);
+
+// bookEW(23, 'Steven Williams');
+
+// // we can create not only specific airlines, but specific flights with bind:
+// // == specifing arguments before hand: eurowings, 23 == pattern: Partial Application
+// // == part of the app are already set:
+// const bookEW23 = book.bind(eurowings, 23);
+// bookEW23('Jonas Schmedtman');
+// bookEW23('Martha Cooper');
+// // -----------
+
+// // .bind with Event Listener
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+
+//   this.planes++;
+//   console.log(this.planes);
+// };
+
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// // .bind gives us a new specific function of the root function
+
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+// const addVat = addTax.bind(null, 0.23); // is a new more specific function based on addTax
+// console.log(addVat(100));
+// console.log(addVat(23));
+//  ----------------------
+
+// ***Once functions: IIFE/Imidietly Invoked Function Expressions:
+// this is for securiy reasons /OOP
+(function () {
+  console.log('This function will run imimdietly and once.');
+})();
+
+// the same function, but arrow
+(() => console.log('Arrow IIFE function runs imimdietly and once.'))();
+
+// !!! Imprtant to understand:
+// ***Closures = variable environment attached to the function:
+// Closures = is a connection to variables that existed at the function's birthplace
+// Closures = has proprity over the scope chain:
+// => executions have access to the contex enviroment in which were created:
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
 };
-lufthansa.book(234, 'Jonas Schmidt');
-lufthansa.book(699, 'Jock Sparow');
-console.log(lufthansa);
 
-const eurowings = {
-  name: 'Eurowings',
-  iataCode: 'EW',
-  bookings: [],
-};
+const booker = secureBooking();
 
-const book = lufthansa.book;
-
-// menualy set this book method:
-book.call(eurowings, 233, 'Sarah Williams');
-book.call(lufthansa, 363, 'Bilie Jean');
-
-const swiss = {
-  airline: 'Swiss Air Lines',
-  iataCode: 'LX',
-  bookings: [],
-};
-
-book.call(swiss, 358, 'Mary Cooper');
-const flightData = [583, 'George Cooper']; // .call the same swiss but with const:
-book.call(swiss, ...flightData);
-console.log(swiss);
-
-// .bind is the same as .call but it creates a new function
-const bookEW = book.bind(eurowings);
-const bookLH = book.bind(lufthansa);
-const bookLX = book.bind(swiss);
-
-bookEW(23, 'Steven Williams');
-
-// we can create not only specific airlines, but specific flights with bind:
-// == specifing arguments before hand: eurowings, 23 == pattern: Partial Application
-// == part of the app are already set:
-const bookEW23 = book.bind(eurowings, 23);
-bookEW23('Jonas Schmedtman');
-bookEW23('Martha Cooper');
-// -----------
-
-// .bind with Event Listener
-lufthansa.planes = 300;
-lufthansa.buyPlane = function () {
-  console.log(this);
-
-  this.planes++;
-  console.log(this.planes);
-};
-
-document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
-
-// .bind gives us a new specific function of the root function
-
-const addTax = (rate, value) => value + value * rate;
-console.log(addTax(0.1, 200));
-
-const addVat = addTax.bind(null, 0.23); // is a new more specific function based on addTax
-console.log(addVat(100));
-console.log(addVat(23));
+booker();
+booker();
+booker();
