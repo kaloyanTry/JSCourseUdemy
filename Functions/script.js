@@ -203,6 +203,7 @@
 
 // the same function, but arrow
 (() => console.log('Arrow IIFE function runs imimdietly and once.'))();
+// ----------------------------------
 
 // !!! Imprtant to understand:
 // ***Closures = variable environment attached to the function:
