@@ -210,6 +210,7 @@
 // Closures = is a connection to variables that existed at the function's birthplace
 // Closures = has proprity over the scope chain:
 // => executions have access to the contex enviroment in which were created:
+
 const secureBooking = function () {
   let passengerCount = 0;
 
