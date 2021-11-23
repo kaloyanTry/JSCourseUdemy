@@ -30,6 +30,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+
 // Buttons scrolling:
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
@@ -55,6 +56,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
+
 
 // Tabbed component === Manipulating the content =>
 // => add, remove classes:
@@ -123,6 +125,7 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
+
 
 /////////////////////////////////////////
 /////////////////////////////////////////
