@@ -24,8 +24,10 @@ class CarClass {
     this.speed = this.speed * 1.6;
   }
 }
+
 const ford = new CarClass('Ford', 120);
 console.log(ford.speedUS);
+
 ford.accelerate();
 ford.accelerate();
 ford.break();
