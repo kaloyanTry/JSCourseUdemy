@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
@@ -13,12 +13,19 @@
     <link rel="stylesheet" href="style.css" />
     <title>Bankist | When Banking meets Minimalist</title>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <header class="header>
+    <header class="header">
       <nav class="nav">
-        <img src="img/logo.png" alt="Bankist logo" id="logo" designer="Jonas" data-version-number="4.0">
+        <img
+          src="img/logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+          designer="Jonas"
+          data-version-number="3.0"
+        />
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#section--1">Features</a>
@@ -30,43 +37,60 @@
             <a class="nav__link" href="#section--3">Testimonials</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--btn btn--show-modal" href="#">Open account</a>
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
           </li>
         </ul>
       </nav>
 
       <div class="header__title">
-        <h1>When
-          <span class="highlight">banking</span>meets <br>
+        <!-- <h1 onclick="alert('HTML alert')"> -->
+        <h1>
+          When
+          <span class="highlight">banking</span>
+          meets<br />
           <span class="highlight">minimalist</span>
         </h1>
-        <h4>A simpler banking experiance for a simpler life.</h4>
-        <button class="btn--text btn--scroll-to">Learn more&DownArrow;</button>
-        <img src="img/hero.png" class="header__img" alt="Minimalist bank items" />
+        <h4>A simpler banking experience for a simpler life.</h4>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <img
+          src="img/hero.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        />
       </div>
     </header>
 
     <section class="section" id="section--1">
       <div class="section__title">
-        <h2 class="section__description">Futures</h2>
-        <h3 class="section__header">Everything you need in modern bank and more.</h3>
+        <h2 class="section__description">Features</h2>
+        <h3 class="section__header">
+          Everything you need in a modern bank and more.
+        </h3>
       </div>
 
       <div class="features">
-        <img src="img/digital-lazy.jpg" alt="Computer image" data-source="img/digital.jpg" class="features__img lazy-img" />
+        <img
+          src="img/digital-lazy.jpg"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="features__img lazy-img"
+        />
         <div class="features__feature">
           <div class="features__icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-monitor"></use>
             </svg>
           </div>
-          <h5>100% digital bank</h5>
+          <h5 class="features__header">100% digital bank</h5>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
             sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
             debitis ducimus.
           </p>
         </div>
+
         <div class="features__feature">
           <div class="features__icon">
             <svg>
@@ -80,9 +104,19 @@
             quibusdam!
           </p>
         </div>
-          <img src="img/grow-lazy.jpg" data-src="img/grow.jpg" alt="Plant" class="features__img lazy-img" />
+        <img
+          src="img/grow-lazy.jpg"
+          data-src="img/grow.jpg"
+          alt="Plant"
+          class="features__img lazy-img"
+        />
 
-        <img src="img/card-lazy.jpg" data-src="img/card.jpg" alt="Credit card" class="features__img lazy-img" />
+        <img
+          src="img/card-lazy.jpg"
+          data-src="img/card.jpg"
+          alt="Credit card"
+          class="features__img lazy-img"
+        />
         <div class="features__feature">
           <div class="features__icon">
             <svg>
@@ -102,12 +136,20 @@
     <section class="section" id="section--2">
       <div class="section__title">
         <h2 class="section__description">Operations</h2>
-        <h3 class="section__header">Everything as simple as possible, but simpler.</h3>
+        <h3 class="section__header">
+          Everything as simple as possible, but no simpler.
+        </h3>
       </div>
 
       <div class="operations">
         <div class="operations__tab-container">
-          <button class="btn operations__tab operations__tab--1 operations__tab--active" data-tab="1" >
+          <button
+            class="
+              btn
+              operations__tab operations__tab--1 operations__tab--active
+            "
+            data-tab="1"
+          >
             <span>01</span>Instant Transfers
           </button>
           <button class="btn operations__tab operations__tab--2" data-tab="2">
@@ -117,7 +159,13 @@
             <span>03</span>Instant Closing
           </button>
         </div>
-        <div class="operations__content operations__content--1 operations__content--active">
+        <div
+          class="
+            operations__content
+            operations__content--1
+            operations__content--active
+          "
+        >
           <div class="operations__icon operations__icon--1">
             <svg>
               <use xlink:href="img/icons.svg#icon-upload"></use>
@@ -308,5 +356,7 @@
       </form>
     </div>
     <div class="overlay hidden"></div>
+
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
