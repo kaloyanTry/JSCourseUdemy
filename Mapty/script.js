@@ -12,7 +12,6 @@ const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 
 // Code:
-
 let map, mapEvent;
 
 if (navigator.geolocation) {
@@ -45,6 +44,7 @@ if (navigator.geolocation) {
     }
   );
 }
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
