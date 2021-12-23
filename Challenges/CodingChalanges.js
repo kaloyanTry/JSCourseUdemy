@@ -1,28 +1,46 @@
 // Fundamentals Part Two
 
+// Coding Chalange 2 3 4
+
+const calcTips = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const bills = [125, 555, 44];
+const tips = [];
+const totals = [];
+
+bills.forEach((bill) => {
+  tips.push(calcTips(bill));
+});
+
+bills.forEach((bill) => {
+  totals.push(calcTips(bill) + bill);
+});
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+const calcAverage = totals.reduce((a, b) => a + b, 0) / totals.length;
+
+console.log(calcAverage);
+
 // Coding Challenge 1
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+// const calcAv = (a, b, c) => (a + b + c) / 3;
+// // console.log(calcAverage(3, 4, 5));
+// const scoreDolphins = calcAverage(244, 23, 71);
+// const scoreKoalas = calcAverage(65, 54, 49);
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//   if (avgDolphins >= avgKoalas * 2) {
+//     console.log(`Dolphins win ${avgDolphins} to ${avgKoalas}`);
+//   } else if (avgKoalas >= avgDolphins * 2) {
+//     console.log(`Koalas win ${avgKoalas} tp ${avgDolphins}`);
+//   } else {
+//     console.log("No team wins");
+//   }
+// };
+// checkWinner(scoreDolphins, scoreKoalas);
 
-const calcAverage = (a, b, c) => (a + b + c) / 3;
-// console.log(calcAverage(3, 4, 5));
-
-const dolphinsScore = calcAverage(44, 23, 71);
-const koalasScore = calcAverage(65, 54, 49);
-
-// console.log(dolphinsScore);
-// console.log(koalasScore);
-
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= avgKoalas * 2) {
-    console.log(`Dolphins win ${avgDolphins}`);
-  } else if (avgKoalas >= avgDolphins * 2) {
-    console.log(`Koalas win ${avgKoalas}`);
-  } else {
-    console.log("No team wins");
-  }
-};
-
-checkWinner(dolphinsScore, koalasScore);
-
+/////////////////////////////////////////////////
 // Fundamentals Part One
 // Coding Chalange 4
 // const bill = 275;
