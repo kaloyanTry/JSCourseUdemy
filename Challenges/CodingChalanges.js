@@ -1,27 +1,43 @@
+"use strict";
+
+// Dev Skills
+const temperatures = [17, 21, 23];
+let i = 1;
+let str = "";
+
+const printForecast = function (arrTemps) {
+  arrTemps.forEach((temp) => {
+    str += `... ${temp}C in ${i} days... `;
+    i++;
+  });
+
+  console.log(str);
+};
+
+printForecast(temperatures);
+
 // Fundamentals Part Two
-
 // Coding Chalange 2 3 4
+// const calcTips = (bill) =>
+//   bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// const bills = [125, 555, 44];
+// const tips = [];
+// const totals = [];
 
-const calcTips = (bill) =>
-  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-const bills = [125, 555, 44];
-const tips = [];
-const totals = [];
+// bills.forEach((bill) => {
+//   tips.push(calcTips(bill));
+// });
 
-bills.forEach((bill) => {
-  tips.push(calcTips(bill));
-});
+// bills.forEach((bill) => {
+//   totals.push(calcTips(bill) + bill);
+// });
+// console.log(bills);
+// console.log(tips);
+// console.log(totals);
 
-bills.forEach((bill) => {
-  totals.push(calcTips(bill) + bill);
-});
-console.log(bills);
-console.log(tips);
-console.log(totals);
+// const calcAverage = totals.reduce((a, b) => a + b, 0) / totals.length;
 
-const calcAverage = totals.reduce((a, b) => a + b, 0) / totals.length;
-
-console.log(calcAverage);
+// console.log(calcAverage);
 
 // Coding Challenge 1
 // const calcAverage = (a, b, c) => (a + b + c) / 3;
