@@ -21,9 +21,9 @@ class Workout {
 
 class Runninng extends Workout {
   type = 'running';
-  constructor(coords, distance, duration, cadance) {
+  constructor(coords, distance, duration, cadence) {
     super(coords, distance, duration);
-    this.cadance = cadance;
+    this.cadence = cadence;
     this.calcPace(); // use constructor to imidiatly calculate the pace
     this._setDescription();
   }
