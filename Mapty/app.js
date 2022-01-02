@@ -3,6 +3,7 @@
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
+
   constructor(coords, distance, duration) {
     this.coords = coords;
     this.distance = distance;
@@ -74,8 +75,9 @@ class App {
     // Get data from local storage:
     this._getLocalStorage();
 
+    // Attach event handlers:
     form.addEventListener('submit', this._newWorkout.bind(this));
-    inputType.addEventListener('change', this._toggleELevationField);
+    inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
   }
 
@@ -128,7 +130,7 @@ class App {
     setTimeout(() => (form.style.display = 'grid'), 1000);
   }
 
-  _toggleELevationField() {
+  _toggleElevationField() {
     inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
     inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
   }
@@ -280,7 +282,7 @@ class App {
 
   _setLocalStorage() {
     localStorage.setItem('workouts', JSON.stringify(this.#workouts));
-    // localStorage is for small amount of data //locking is a bad practice
+    // localStorage is for small amount of data / a locking is a bad practice
   }
 
   _getLocalStorage() {
@@ -294,9 +296,11 @@ class App {
       this._renderWorkout(work);
     });
   }
+
   reset() {
     localStorage.removeItem('workouts');
     location.reload();
+    // app.reset() on console for removing all the data on local storage
   }
 }
 
