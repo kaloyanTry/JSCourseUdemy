@@ -300,7 +300,7 @@ class App {
   reset() {
     localStorage.removeItem('workouts');
     location.reload();
-    // app.reset() on console for removing all the data on local storage
+    // app.reset() on the browser console for removing all the data on local storage
   }
 }
 
