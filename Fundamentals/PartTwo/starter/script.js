@@ -54,6 +54,8 @@
 // console.log(fruitProcessor(2, 3));
 //-----------------
 
+const arrF = birthYear => 2037 - birthYear;
+
 const ageCalc = function (birthYear) {
   return 2022 - birthYear;
 };
@@ -95,8 +97,37 @@ const yearUntilRetirementArrow = (birthYear, firstName) => {
 
 yearUntilRetirement(1978, 'Kaloyan');
 
-const name = 'Kaloyan';
+const fna = 'Kaloyan';
 const age = 42;
 
-if (age === 422) {
+if (fna === 'Gogo') {
+  console.log('That is right');
+} else {
+  console.log('Not right');
 }
+
+// ! solution:
+const dophs = [44, 232, 71];
+const koals = [23, 34, 27];
+
+function calcAverage(arr) {
+  let sum = 0;
+  const allSum = arr.reduce(
+    (acumolator, currValue) => acumolator + currValue,
+    sum
+  );
+  return allSum;
+}
+console.log(calcAverage(dophs) / dophs.length);
+const dophsAvrg = calcAverage(dophs) / dophs.length;
+const koalssAvrg = calcAverage(koals) / koals.length;
+
+function checkWinner(avr1, avr2) {
+  if (avr1 >= 2 * avr2) {
+    console.log(`Dolphins win (${avr1} vs ${avr2})`);
+  }
+  if (avr2 >= 2 * avr1) {
+    console.log(`Koalas win (${avr2} vs ${avr1})`);
+  }
+}
+checkWinner(dophsAvrg, koalssAvrg);
