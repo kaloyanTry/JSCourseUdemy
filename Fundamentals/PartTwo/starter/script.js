@@ -131,3 +131,16 @@ function checkWinner(avr1, avr2) {
   }
 }
 checkWinner(dophsAvrg, koalssAvrg);
+
+// Factoriel:
+const fact = n => (!(n > 0) ? 1 : fact(n - 1) * n);
+console.log(fact(5));
+
+// Fibonacci JS algorithm
+const n = 10;
+const fib = [0, 1];
+
+for (let i = 2; i <= n; i++) {
+  fib[i] = fib[i - 2] + fib[i - 1];
+  console.log(fib[i]);
+}
