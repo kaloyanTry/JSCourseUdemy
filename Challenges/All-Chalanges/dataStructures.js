@@ -86,7 +86,6 @@ team1 < team2 && console.log('Team1 is more likely to win');
 team1 > team2 && console.log('Team2 is more likely to win');
 
 //////////Coding Challenge 2:
-
 //1. Loop over the game.scored array and print each player name to the console
 const scores = game.scored.forEach((name, i) =>
   console.log(`Goal ${i + 1}: ${name}`)
@@ -108,7 +107,6 @@ const scorers = {};
 for (const pl of game.scored) {
   scorers[pl] ? scorers[pl]++ : (scorers[pl] = 1);
 }
-
 console.log(scorers);
 
 // Chalange 3:
@@ -127,7 +125,6 @@ const gameEvents = new Map([
 ]);
 
 ////1. Create an array 'events' of the different game events that happened
-
 const events = [...new Set(gameEvents)];
 console.log(events);
 
@@ -139,7 +136,6 @@ console.log(gameEvents);
 console.log(`An event happened every ${90 / gameEvents.size} minutes`);
 
 //// 4. Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half
-
 for (const [minute, event] of gameEvents) {
   const half = minute <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${minute}: ${event}`);
