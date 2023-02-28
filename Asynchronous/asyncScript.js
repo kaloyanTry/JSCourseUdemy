@@ -107,7 +107,7 @@ const whereAmI = async function () {
 };
 
 console.log('1: Will get location');
-// const city = whereAmI();
+// const city = whereAmI(); // old way
 // console.log(city);
 
 // whereAmI() // old Promise way to do it, async down is modern:
